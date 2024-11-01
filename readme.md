@@ -1,55 +1,49 @@
-# Insertion Sort C++
+# AnalyzeAlgorithmsOrdering
 
-Este projeto implementa o algoritmo de ordenação Insertion Sort em C++. Ele gera dados aleatórios, ordena-os e salva tanto os dados de entrada quanto os resultados em arquivos. Além disso, o tempo de execução é medido e também salvo em um arquivo.
+## Descrição do Projeto
+O projeto **AnalyzeAlgorithmsOrdering** foi desenvolvido para analisar e comparar o desempenho de diferentes algoritmos de ordenação. Ele permite realizar a ordenação de dados em ordem crescente, decrescente e aleatória para diversas instâncias de tamanhos específicos, salvando os resultados e tempos de execução em arquivos separados.
 
-## Estrutura do Projeto
+Os algoritmos de ordenação implementados são:
+- Insertion Sort
+- Selection Sort
+- Bubble Sort
+- Shell Sort
 
-- **`InsertionSort.h`**: Definição da classe `InsertionSort`, que contém métodos para ordenar dados, gerar dados aleatórios e manipular arquivos.
-- **`InsertionSort.cpp`**: Implementação da classe `InsertionSort`.
-- **`main.cpp`**: Ponto de entrada do programa que permite ao usuário escolher o tipo de dados e o tamanho do vetor a ser ordenado.
-- **`TesteInsertionSort.cpp`**: Programa para executar testes automatizados do algoritmo de ordenação com diferentes tipos e tamanhos de dados.
+## Estrutura de Arquivos e Diretórios
+O projeto organiza os resultados e os tempos de execução em uma estrutura de diretórios conforme o algoritmo e o tipo de dados escolhido, com subdiretórios para cada tipo de ordenação e tamanhos de instância.
 
-## Funcionalidades
+Exemplo de estrutura de diretórios:
+/InsertionSort /ArquivosEntrada /Crescente /Decrescente /Random 
+/ArquivosSaida /Crescente /Decrescente /Random 
+/ArquivoTempo /Crescente /Decrescente /Random
 
-- **Geração de Dados**:
-  - Dados aleatórios
-  - Dados em ordem crescente
-  - Dados em ordem decrescente
 
-- **Ordenação**: Utiliza o algoritmo Insertion Sort para ordenar os dados.
+Cada arquivo segue a convenção de nomes:
+- **Entrada**: `input_<tamanho>.txt`
+- **Saída**: `output_sorted_<tamanho>.txt`
+- **Tempo**: `output_time_<tamanho>.txt`
 
-- **Medição de Tempo**: Mede o tempo que leva para ordenar os dados e salva essa informação.
+## Pré-requisitos
+- **Compilador C++**: O projeto foi desenvolvido em C++, então é necessário um compilador compatível.
+- **Sistema operacional**: Windows (a função `_mkdir` utilizada para criação de diretórios é específica para Windows).
 
-- **Salvamento em Arquivos**: Salva os dados de entrada, dados ordenados e o tempo de execução em arquivos de texto organizados em diretórios.
-
-- **Testes Automatizados**: O arquivo `TesteInsertionSort.cpp` executa uma série de testes automatizados, gerando dados de diferentes tipos e tamanhos, medindo o tempo de ordenação e salvando os resultados.
-
-## Como Compilar e Executar
-
-### Pré-requisitos
-
-Certifique-se de ter um compilador C++ instalado (como `g++`). 
+## Compilação e Execução
 
 ### Compilação
+Para compilar o projeto, execute o seguinte comando no terminal, estando no diretório do projeto:
 
-Para compilar o projeto, use o seguinte comando:
-
-    g++ -o InsertionSort main.cpp InsertionSort.cpp
-
-#### Execução
-
-Após a compilação, execute o programa principal com o seguinte comando:
-
-    ./InsertionSort    
-
-### Teste Automatizado
-
-    g++ -o TesteInsertionSort TesteInsertionSort.cpp InsertionSort.cpp
+    g++ -o AnalyzeAlgorithmsOrdering main.cpp Algoritmos.cpp BubbleSort.cpp InsertionSort.cpp SelectionSort.cpp ShellSort.cpp
 
 
-#### Execução
+### Execução
+    ./AnalyzeAlgorithmsOrdering
 
-Após a compilação, execute o programa principal com o seguinte comando:
+## Teste
+### Compilação
+Para compilar o projeto, execute o seguinte comando no terminal, estando no diretório do projeto:
 
-    ./TesteInsertionSort
+    g++ -o Teste_AnalyzeAlgorithmsOrdering TestePA.cpp Algoritmos.cpp BubbleSort.cpp InsertionSort.cpp SelectionSort.cpp ShellSort.cpp
 
+
+### Execução
+    ./Teste_AnalyzeAlgorithmsOrdering
