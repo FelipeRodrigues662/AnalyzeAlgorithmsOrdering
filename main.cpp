@@ -1,62 +1,100 @@
-#include "InsertionSort.h"
+#include "Algoritmos.h"
 #include <iostream>
 #include <vector>
 
 int main() {
-    InsertionSort sorter;
-    sorter.createDirectories(); 
-
     int choice;
+    char type;
+    int size;
+    std::string algorithmName;
     std::string route;
+
     do {
-        std::cout << "Escolha uma opcao:\n";
-        std::cout << "1. Insertion Sort\n";
-        std::cout << "0. Sair\n";
-        std::cin >> choice;
+        
+        do{
+            std::cout << "Escolha uma opcao:\n";
+            std::cout << "1. Insertion Sort\n";
+            std::cout << "2. Selection Sort\n";
+            std::cout << "3. Bubble Sort\n";
+            std::cout << "4. Shell Sort\n";
+            std::cout << "0. Sair\n";
+            std::cin >> choice;
 
-        if (choice == 1) {
-            char type;
-            int size;
+            if (choice == 0) break;
 
+        } while(choice > 4)
+
+        system("cls");
+
+        do{
             std::cout << "Escolha o tipo de dados:\n";
             std::cout << "'r' para randomico\n";
             std::cout << "'c' para crescente\n";
             std::cout << "'d' para decrescente\n";
             std::cin >> type;
 
+            if(type == 'r' || type == 'c' || type == 'd')
+                break;
+            std::cout << "Tipo invalido. Tente novamente: ";
+
+        } while (true)
+        
+        system("cls");
+
+        do{
             std::cout << "Escolha o tamanho (10, 100, 1000, 10000, 100000, 1000000):\n";
             std::cin >> size;
 
-            std::vector<int> data;
+            if(size == 10 || size == 100 || size == 1000 || size == 10000 || size == 100000 || size == 1000000)
+                    break;
+                std::cout << "Tamanho invalido. Tente novamente: ";
 
-            // Verifica o tipo escolhido e gera os dados
-            if (type == 'r') {
-                data = sorter.generateRandomData(size);
-                route = "Random";
-            } else if (type == 'c') {
-                data = sorter.generateSortedData(size);
-                route = "Crescente";
-            } else if (type == 'd') {
-                data = sorter.generateReverseSortedData(size);
-                route = "Decrescente";
-            } else {
-                std::cerr << "Tipo invalido. Tente novamente.\n";
-                continue; 
-            }
-            
-            // Salvar os resultados de Entrada
-            sorter.saveToFile(data, "./InsertionSort/ArquivosEntrada/" + route + "/input_" + std::to_string(size) + ".txt", size);
+        } while (true)
 
-            // Medir o tempo e ordenar os dados
-            double timeTaken = sorter.sortAndMeasureTime(data);
-            
-            // Salvar os resultados de Saida e Tempo
-            sorter.saveToFile(data, "./InsertionSort/ArquivosSaida/" + route + "/output_sorted_" + std::to_string(size) + ".txt", size);
-            sorter.saveTimeToFile(timeTaken, "./InsertionSort/ArquivoTempo/" + route + "/output_time_" + std::to_string(size) + ".txt");
+        system("cls");
 
-            std::cout << "Ordenacao concluida. Resultados salvos.\n";
-            std::cout << timeTaken;
-        }
+        std::vector<int> data;
+        Algoritmos* sorter;
+
+        if (choice == 1) {
+            sorter = new InsertionSort();
+            algorithmName = "InsertionSort";
+        } else if (choice == 2) {
+            sorter = new SelectionSort();
+            algorithmName = "SelectionSort";
+        } else if (choice == 3) {
+            sorter = new BubbleSort();
+            algorithmName = "BubbleSort";
+        } else if (choice == 4) {
+            sorter = new ShellSort();
+            algorithmName = "ShellSort";
+        } 
+
+        if (type == 'r') {
+            data = sorter->generateRandomData(size);
+            route = "Random";
+        } else if (type == 'c') {
+            data = sorter->generateSortedData(size);
+            route = "Crescente";
+        } else if (type == 'd') {
+            data = sorter->generateReverseSortedData(size);
+            route = "Decrescente";
+        } 
+        
+        sorter->createDirectories(algorithmName);
+
+        sorter->saveToFile(data, "./" + algorithmName + "/ArquivosEntrada/" + route + "/input_" + std::to_string(size) + ".txt", size);
+
+        double timeTaken = sorter->sortAndMeasureTime(data);
+
+        sorter->saveToFile(data, "./" + algorithmName + "/ArquivosSaida/" + route + "/output_sorted_" + std::to_string(size) + ".txt", size);
+        sorter->saveTimeToFile(timeTaken, "./" + algorithmName + "/ArquivoTempo/" + route + "/output_time_" + std::to_string(size) + ".txt");
+
+        std::cout << "Ordenacao concluida. Resultados salvos.\n";
+        std::cout << "Tempo de execucao: " << timeTaken << " ms\n";
+
+       
+        delete sorter;
 
     } while (choice != 0);
 
