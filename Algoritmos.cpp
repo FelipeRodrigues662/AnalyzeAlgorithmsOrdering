@@ -53,7 +53,7 @@ void Algoritmos::saveTimeToFile(double time, const std::string& filename) {
         std::cerr << "Erro ao abrir o arquivo: " << filename << std::endl;
         return;
     }
-    file << "Tempo de execução: " << time << " ms" << std::endl;
+    file << "Tempo de execução: " << time << " s" << std::endl;
 }
 
 std::vector<int> Algoritmos::generateRandomData(int size) {

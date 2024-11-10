@@ -22,7 +22,7 @@ int main() {
 
             if (choice == 0) break;
 
-        } while(choice > 4)
+        } while(choice > 4);
 
         system("cls");
 
@@ -37,9 +37,9 @@ int main() {
                 break;
             std::cout << "Tipo invalido. Tente novamente: ";
 
-        } while (true)
+        } while (true);
         
-        system("cls");
+        
 
         do{
             std::cout << "Escolha o tamanho (10, 100, 1000, 10000, 100000, 1000000):\n";
@@ -49,9 +49,9 @@ int main() {
                     break;
                 std::cout << "Tamanho invalido. Tente novamente: ";
 
-        } while (true)
+        } while (true);
 
-        system("cls");
+        
 
         std::vector<int> data;
         Algoritmos* sorter;
@@ -86,12 +86,14 @@ int main() {
         sorter->saveToFile(data, "./" + algorithmName + "/ArquivosEntrada/" + route + "/input_" + std::to_string(size) + ".txt", size);
 
         double timeTaken = sorter->sortAndMeasureTime(data);
+        timeTaken = timeTaken / 1000;
+
 
         sorter->saveToFile(data, "./" + algorithmName + "/ArquivosSaida/" + route + "/output_sorted_" + std::to_string(size) + ".txt", size);
         sorter->saveTimeToFile(timeTaken, "./" + algorithmName + "/ArquivoTempo/" + route + "/output_time_" + std::to_string(size) + ".txt");
 
         std::cout << "Ordenacao concluida. Resultados salvos.\n";
-        std::cout << "Tempo de execucao: " << timeTaken << " ms\n";
+        std::cout << "Tempo de execucao: " << timeTaken << " s\n";
 
        
         delete sorter;
