@@ -39,7 +39,7 @@ int main() {
 
         } while (true);
         
-        
+        system("cls");
 
         do{
             std::cout << "Escolha o tamanho (10, 100, 1000, 10000, 100000, 1000000):\n";
@@ -51,7 +51,7 @@ int main() {
 
         } while (true);
 
-        
+        system("cls");
 
         std::vector<int> data;
         Algoritmos* sorter;
