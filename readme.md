@@ -32,7 +32,7 @@ Cada arquivo segue a convenção de nomes:
 ### Compilação
 Para compilar o projeto, execute o seguinte comando no terminal, estando no diretório do projeto:
 
-    g++ -o AnalyzeAlgorithmsOrdering main.cpp Algoritmos.cpp BubbleSort.cpp InsertionSort.cpp SelectionSort.cpp ShellSort.cpp
+    g++ -o AnalyzeAlgorithmsOrdering main.cpp Algoritmos.cpp BubbleSort.cpp InsertionSort.cpp SelectionSort.cpp ShellSort.cpp MergeSort.cpp
 
 
 ### Execução
@@ -42,7 +42,7 @@ Para compilar o projeto, execute o seguinte comando no terminal, estando no dire
 ### Compilação
 Para compilar o projeto, execute o seguinte comando no terminal, estando no diretório do projeto:
 
-    g++ -o Teste_AnalyzeAlgorithmsOrdering TestePA.cpp Algoritmos.cpp BubbleSort.cpp InsertionSort.cpp SelectionSort.cpp ShellSort.cpp
+    g++ -o Teste_AnalyzeAlgorithmsOrdering TestePA.cpp Algoritmos.cpp BubbleSort.cpp InsertionSort.cpp SelectionSort.cpp ShellSort.cpp MergeSort.cpp
 
 
 ### Execução

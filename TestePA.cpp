@@ -6,10 +6,10 @@
 int main() {
     char types[] = {'r', 'c', 'd'};
     int sizes[] = {10, 100, 1000, 10000, 100000, 1000000};
-    std::string algorithmNames[] = {"InsertionSort", "SelectionSort", "BubbleSort", "ShellSort"};
-    Algoritmos* sorters[] = {new InsertionSort(), new SelectionSort(), new BubbleSort(), new ShellSort()};
+    std::string algorithmNames[] = {"InsertionSort", "SelectionSort", "BubbleSort", "ShellSort", "MergeSort"};
+    Algoritmos* sorters[] = {new InsertionSort(), new SelectionSort(), new BubbleSort(), new ShellSort(), new MergeSort()};
 
-    for (int algoIndex = 0; algoIndex < 4; algoIndex++) {
+    for (int algoIndex = 0; algoIndex < 5; algoIndex++) {
         Algoritmos* sorter = sorters[algoIndex];
         std::string algorithmName = algorithmNames[algoIndex];
 
