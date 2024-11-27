@@ -40,4 +40,11 @@ public:
     void sort(std::vector<int>& arr) override;
 };
 
+class MergeSort : public Algoritmos {
+public:
+    void sort(std::vector<int>& arr) override;
+private:
+    void mergeSort(std::vector<int>& arr, int left, int right);
+    void merge(std::vector<int>& arr, int left, int mid, int right);
+};
 #endif // ALGORITMOS_H

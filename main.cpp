@@ -17,12 +17,13 @@ int main() {
             std::cout << "2. Selection Sort\n";
             std::cout << "3. Bubble Sort\n";
             std::cout << "4. Shell Sort\n";
+            std::cout << "5. Merge Sort\n";
             std::cout << "0. Sair\n";
             std::cin >> choice;
 
             if (choice == 0) break;
 
-        } while(choice > 4);
+        } while(choice > 5);
 
         system("cls");
 
@@ -68,6 +69,9 @@ int main() {
         } else if (choice == 4) {
             sorter = new ShellSort();
             algorithmName = "ShellSort";
+        } else if (choice == 5) {
+            sorter = new MergeSort();
+            algorithmName = "MergeSort";
         } 
 
         if (type == 'r') {
