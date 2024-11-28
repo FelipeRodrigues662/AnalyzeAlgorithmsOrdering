@@ -47,4 +47,13 @@ private:
     void mergeSort(std::vector<int>& arr, int left, int right);
     void merge(std::vector<int>& arr, int left, int mid, int right);
 };
+
+class QuickSort : public Algoritmos{
+public:
+    void sort(std::vector<int>& arr) override;
+private:
+    void quickSort(std::vector<int>& arr, int low, int high);
+    int partition(std::vector<int>& arr, int low, int high);
+};
+
 #endif // ALGORITMOS_H

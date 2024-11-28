@@ -18,12 +18,13 @@ int main() {
             std::cout << "3. Bubble Sort\n";
             std::cout << "4. Shell Sort\n";
             std::cout << "5. Merge Sort\n";
+            std::cout << "6. QuickSort\n";
             std::cout << "0. Sair\n";
             std::cin >> choice;
 
             if (choice == 0) break;
 
-        } while(choice > 5);
+        } while(choice > 6);
 
         system("cls");
 
@@ -37,7 +38,7 @@ int main() {
             if(type == 'r' || type == 'c' || type == 'd')
                 break;
             std::cout << "Tipo invalido. Tente novamente: ";
-
+            system("cls");
         } while (true);
         
         system("cls");
@@ -49,7 +50,7 @@ int main() {
             if(size == 10 || size == 100 || size == 1000 || size == 10000 || size == 100000 || size == 1000000)
                     break;
                 std::cout << "Tamanho invalido. Tente novamente: ";
-
+                system("cls");
         } while (true);
 
         system("cls");
@@ -72,6 +73,9 @@ int main() {
         } else if (choice == 5) {
             sorter = new MergeSort();
             algorithmName = "MergeSort";
+        } else if (choice == 6) {
+            sorter = new QuickSort();
+            algorithmName = "QuickSort";
         } 
 
         if (type == 'r') {
