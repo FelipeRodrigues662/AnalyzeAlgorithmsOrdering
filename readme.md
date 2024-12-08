@@ -8,6 +8,8 @@ Os algoritmos de ordenação implementados são:
 - Selection Sort
 - Bubble Sort
 - Shell Sort
+- Merge Sort
+- Quick Sort
 
 ## Estrutura de Arquivos e Diretórios
 O projeto organiza os resultados e os tempos de execução em uma estrutura de diretórios conforme o algoritmo e o tipo de dados escolhido, com subdiretórios para cada tipo de ordenação e tamanhos de instância.
